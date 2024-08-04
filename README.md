@@ -37,7 +37,18 @@ Created By: Sanchit Ahuja(sanchitahujafas@gmail.com)
     ```
 
 5. **Configure DB Settings in settings.py:**
-    ```         
+    ```
+   DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'your_database_name',
+        'USER': 'your_database_user',
+        'PASSWORD': 'your_database_password',
+        'HOST': 'your_database_host',  
+        'PORT': 'your_database_port', 
+    }
+    }   
+   ```
 
 6. **Run migrations:**
     ```
