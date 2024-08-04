@@ -2,10 +2,10 @@
 # API Logics
 
 ## Overview
-This is a bookbank app with features like searching books, adding recommendations, etc. Some endpoints like register, login, and search books are public since anyone should be able to access these. Other endpoints such as adding/viewing/filtering recommendations, liking, and commenting are authorized endpoints that require user registration to access.
-All the data is managed in a local database, including recommendations, likes, and comments.
-SwaggerUI documentation is available at `/swagger/`.
-UUid is used everywhere
+-This is a bookbank app with features like searching books, adding recommendations, etc. Some endpoints like register, login, and search books are public since anyone should be able to access these. Other endpoints such as adding/viewing/filtering recommendations, liking, and commenting are authorized endpoints that require user registration to access.
+-All the data is managed in a local database, including recommendations, likes, and comments.
+-SwaggerUI documentation is available at `/swagger/`.
+-UUid is used everywhere
 
 ## API Types
 There are two separate kinds of APIs for this project:
