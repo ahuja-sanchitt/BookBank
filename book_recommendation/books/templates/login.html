@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<style> 
+    .loginform{
+        text-align: center;
+        padding: 125px 50px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        background-color: #E3E6E3;
+        /* color: white; */
+        width: 400px;
+        margin: auto;
+        margin-top: 70px;
+        border-radius: 10px;
+
+    }
+    h1{
+        margin-bottom: 50px;
+    }
+    input{
+        height: 26px;
+        border: 1px solid black;
+        margin-left: -5px;
+        margin-top: -2px;
+    }
+    label{
+        padding: 9px;
+        margin-top: 2px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    button{
+        margin-top: 20px;
+        padding: 10px 110px;
+        margin-left: 10px;
+        background-color: #62a03f;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+</style>
+<html>
+<head>
+    <title>Login</title>
+    
+</head>
+<body>
+    <div class="loginform">
+    <h1>Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <p> <b>Don't have an account? <a href="{% url 'registerview' %}">Register here</a> </b> </p>
+    </div>
+</body>
+
+</html>
+

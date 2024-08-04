@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<style>
+.main-div{
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+    width: 70%;
+    /* background-color:white; */
+    /* border-radius: 10px; */
+    margin: auto;
+    padding: 40px;
+}
+.sub-div{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 85%;
+    background-color: white;
+    margin: 3%;
+    padding: 30px;
+}
+footer{
+    background-color: #4A4A4A;
+    padding: 20px;
+    color: white;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+ul{
+    list-style-type: none;
+    text-decoration: none;
+    }
+a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+h1{
+    text-align: center;
+}
+body{
+    background-color: #E3E6E3;
+    margin: 0;
+}
+ </style> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <div class="main-div">
+    <header>
+        <h1>Welcome to the Book Recommendation App</h1>
+    </header>
+    <nav>
+        
+        <ul>
+            <div class="sub-div">
+                <li><a href="{% url 'loginview' %}">Login</a></li>
+            </div>
+            <div class="sub-div">
+                <li><a href="{% url 'registerview' %}">Register</a></li>
+            </div>
+            <div class="sub-div">
+                <li><a href="{% url 'search_books' %}">Search Books</a></li>
+            </div>
+        </ul>
+        </div>
+    </nav>
+    <footer>
+        <section>
+            <h2>About Our App</h2>
+            <p>This is a simple app to recommend books and share your thoughts on them. You can register, log in, search for books, and give recommendations.</p>
+        </section>    
+        <p>&copy; 2024 Book Recommendation App</p>
+    </footer>
+</body>
+</html>

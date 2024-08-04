@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<style>
+.main-div{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 70%;
+    background-color: #c7c8c7;
+    border-radius: 10px;
+    margin: auto;
+    padding: 40px;
+}
+.sub-div{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 85%;
+    background-color: white;
+    margin: 5%;
+    padding: 30px;
+}
+ul{
+    list-style-type: none;
+    text-decoration: none;
+    }
+a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME PAGE</title>
+</head>
+<body>
+    <header class="main-header">
+        <nav>
+            <ul>
+                <div class="main-div">
+                    <div class="sub-div">
+                        <li><a href="{% url 'search_books' %}">Search Books</a></li>
+                    </div>
+                    {% if user.is_authenticated %}
+                    <div class="sub-div">
+                        <li><a href="{% url 'submit_recommendation_view' %}">Submit Recommendation</a></li>
+                    </div>
+                    <div class="sub-div">
+                        <li><a href="{% url 'view_recommendations' %}">View Recommendations</a></li>
+                    </div>    
+                    {% endif %}
+                    <div class="sub-div">
+                        <li><a style="color: red;" href="{% url 'logout' %}">Logout</a></li>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

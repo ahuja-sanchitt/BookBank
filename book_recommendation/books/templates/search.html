@@ -1,0 +1,90 @@
+<!-- templates/search.html -->
+<!DOCTYPE html>
+<style>
+.main-div{
+    display: flex;
+    width: 95%;
+    margin: 25px;
+    padding: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.sub-div1{
+    width: 25%;
+    padding: 10px;
+}
+.sub-div2{
+    width: 65%;
+    padding: 10px;
+}
+.search-div{
+    /* margin-left: 25px; */
+    display: flex;
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-top: 10px;
+    /* margin: 0; */
+}
+form{
+    margin-top: 10px;
+}
+input{
+    width: 500px;
+    height: 35px;
+    margin-right: -5px;
+    margin-left: 20px;
+}
+button{
+    width: 120px;
+    height: 41.5px;
+    background-color: #62a03f;
+    color: white;
+    font-weight: bold;
+    border-color:#62a03f ;
+}
+h1{
+    margin-top: 10px;
+}
+body{
+    margin: 0;
+}
+</style>
+<html>
+<head>
+    <title>Search Books</title>
+</head>
+<body>
+    <div class="search-div">
+        <h1>Search Books</h1>
+        <form method="get" action="{% url 'search_books' %}">
+            <input type="text" name="q" placeholder="Search for books" value="{{ request.GET.q }}">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    
+    {% if books %}
+        
+            {% for book in books %}
+                
+                    <div class="main-div">
+                        <div class="sub-div1">
+                            <h2>{{ book.title }}</h2>
+                            {% if book.cover_image %}
+                            <img src="{{ book.cover_image }}" alt="Cover Image">
+                            {% endif %}
+                        </div> 
+                        <div class="sub-div2">     
+                            <p><strong>Author:</strong> {{ book.author }}</p>
+                            <p><strong>Description:</strong> {{ book.description }}</p>
+
+                            <p><strong>Rating:</strong> {{ book.rating }}</p>
+                        </div>        
+                </div>
+                
+            {% endfor %}
+       
+    {% else %}
+        <p>No results found.</p> 
+    {% endif %}
+</body>
+</html>

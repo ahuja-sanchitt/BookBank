@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<style>
+    body{
+        margin: 0;
+    }
+    .recform{
+        padding: 20px;
+
+    }
+    h1{
+        background-color: black;
+        color: white;
+        width: 100%;
+        padding: 20px;
+        margin-top: 0;
+    }
+    input{
+        height: 26px;
+        border: 1px solid black;
+        margin-left: -5px;
+        margin-top: -2px;
+        width: 200px;
+    }
+    label{
+        padding: 9px;
+        margin-top: 2px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    button{
+        margin-top: 20px;
+        padding: 10px 130px;
+        margin-left: 10px;
+        background-color: #62a03f;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    textarea{
+        display: block;
+        height: 100px;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+    label[for="id_rating"] {
+        /* width: 200px; */
+        margin-right: 34px;
+    }
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Recommendation</title>
+</head>
+<body>
+    <h1>Submit Recommendation</h1>
+    <div class="recform">        
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

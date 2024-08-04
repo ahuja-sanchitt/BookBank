@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<style> 
+    .registerform{
+        text-align: center;
+        padding: 125px 50px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        background-color: #E3E6E3;
+        width: 400px;
+        margin: auto;
+        margin-top: 50px;
+        border-radius: 10px;
+
+    }
+    h1{
+        margin-bottom: 50px;
+    }
+    input{
+        height: 26px;
+        border: 1px solid black;
+        margin-left: -5px;
+        margin-top: -2px;
+    }
+    label{
+        padding: 9px;
+        margin-top: 2px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    button{
+        margin-top: 20px;
+        padding: 10px 110px;
+        margin-left: 10px;
+        background-color: #62a03f;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .helptext{
+        display: none;
+    }
+    label[for="id_email"] {
+        margin-left: -40px;
+    }
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <div class="registerform">
+    <h1>Register</h1>
+    <form method="POST" action="{% url 'registerview' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+    <p><b>Already have an account? <a href="{% url 'loginview' %}">Login here</a></b></p>
+    </div>
+</body>
+</html>

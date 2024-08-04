@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<style>
+    .main-div{
+        /* display: flex; */
+        width: 94%;
+        margin: 25px;
+        padding: 20px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    body{
+        margin: 0;
+    }
+    h1{
+        background-color: black;
+        color: white;
+        width: 100%;
+        padding: 20px;
+        margin-top: 0;
+    }
+ </style>   
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Recommendations</title>
+</head>
+<body>
+    <h1>Recommendations</h1>
+    
+    
+        {% for recommendation in recommendations %}
+           
+                <div class="main-div">
+                <h2>{{ recommendation.bookname }}</h2>
+                <p>Rating: {{ recommendation.rating }}</p>
+                <p>{{ recommendation.recommendation_text }}</p>
+                <p>Submitted by: {{ recommendation.user.username }} on {{ recommendation.publication_date }}</p>
+                </div>    
+            
+                
+        {% endfor %}
+    
+</body>
+</html>
